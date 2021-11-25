@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Application;
 
 namespace API.Controllers
 {
     [Route("api/records")]
     public class Record : ControllerBase
-    {        
+    {
+        private readonly IRecordApplicationService _recordApplicationService;
+        public Record(IRecordApplicationService recordApplicationService)
+        {
+            _recordApplicationService = recordApplicationService;
+        }
     }
 }
