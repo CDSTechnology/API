@@ -1,15 +1,11 @@
 ﻿using Domain;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application
+namespace Infra.Data
 {
-    public class RecordApplicationService : IRecordApplicationService
+    public class MusicalGenreRepository : IMusicalGenreRepository
     {
-        public List<MusicalGenre> FilterGenre(Filter filter)
+        public List<MusicalGenre> FilterGenre(FilterDomain filterDomain)
         {
             //TODO - use object filter to find records inside the listMusicalGenre
 
@@ -18,9 +14,9 @@ namespace Application
 
             musicalGenre.MusicalGenreId = 1;
             musicalGenre.Description = "Hip Hop";
-            musicalGenre.Performers = new List<Performer> { 
-                new Performer 
-                    { 
+            musicalGenre.Performers = new List<Performer> {
+                new Performer
+                    {
                         PerformerId = 1,
                         FirstName = "first name 1",
                         MiddleName = "middle name 1",
@@ -28,17 +24,17 @@ namespace Application
                         YearsOld = 35,
                         Email = "hiphop@hiphop.com",
                         Curiosities = new List<Curiosity>()
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 1, FavorityMovie="Predator", YearRelease=1987 },
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 2, FavorityMovie = "Predator 2", YearRelease = 1990 } },
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 3, FavorityMovie = "Alien vs. Predator", YearRelease = 2004 } },
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 4, FavorityMovie = "Alien vs. Predator 2", YearRelease = 2007} },
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 5, FavorityMovie = "Predators", YearRelease = 2010} },
-                                {new Curiosity 
+                                {new Curiosity
                                     { CuriosityId = 6, FavorityMovie = "The Ultimate Predator", YearRelease = 2018 } }
                             }
                     },
@@ -52,14 +48,14 @@ namespace Application
             musicalGenre.MusicalGenreId = 2;
             musicalGenre.Description = "Rock in Roll";
 
-            musicalGenre.Performers = new List<Performer> { 
-                new Performer 
-                { 
-                    PerformerId = 4, 
-                    FirstName = "first name 2", 
-                    MiddleName = "middle name 2", 
-                    LastName = "last name 2", 
-                    YearsOld = 35, 
+            musicalGenre.Performers = new List<Performer> {
+                new Performer
+                {
+                    PerformerId = 4,
+                    FirstName = "first name 2",
+                    MiddleName = "middle name 2",
+                    LastName = "last name 2",
+                    YearsOld = 35,
                     Email = "rockinroll@rockinroll.com",
                     Curiosities = new List<Curiosity>()
                     {
@@ -69,12 +65,12 @@ namespace Application
                         },
 
                         new Curiosity
-                        { 
+                        {
                             CuriosityId = 8, FavorityMovie="Movie 2", YearRelease=2021
                         },
 
                         new Curiosity
-                        { 
+                        {
                             CuriosityId = 9, FavorityMovie="Movie 3", YearRelease=2021
                         },
 
@@ -89,9 +85,9 @@ namespace Application
                         }
                     }
                 },
-                                                            
+
                 new Performer { PerformerId = 5, FirstName = "first name 5", MiddleName = "middle name 5", LastName = "last name 5", YearsOld = 40, Email = "rock2@rockinroll.com" },
-                                                            
+
                 new Performer { PerformerId = 6, FirstName = "first name 6 ", MiddleName = "middle name 6", LastName = "last name6", YearsOld = 45, Email = "rock6@hiphop.com" }
                 };
             listMusicalGenre.Add(musicalGenre);
@@ -101,9 +97,9 @@ namespace Application
             musicalGenre.MusicalGenreId = 3;
             musicalGenre.Description = "Pop";
 
-            musicalGenre.Performers = new List<Performer> { new Performer { PerformerId = 7, FirstName = "first name 7 for repository", MiddleName = "middle name 7 for repository", LastName = "last name 7 for repository", YearsOld = 35, Email = "firstmidllelast7@hiphop.com" },
-                                                            new Performer { PerformerId = 8, FirstName = "first name 8 for repository", MiddleName = "middle name 8 for repository", LastName = "last name 8 for repository", YearsOld = 40, Email = "firstmidllelast8@hiphop.com" },
-                                                            new Performer { PerformerId = 9, FirstName = "first name 9 for repository", MiddleName = "middle name 9 for repository", LastName = "last name 9 for repository", YearsOld = 45, Email = "firstmidllelast9@hiphop.com" }
+            musicalGenre.Performers = new List<Performer> { new Performer { PerformerId = 7, FirstName = "first name 7", MiddleName = "middle name 7", LastName = "last name 7 ", YearsOld = 35, Email = "first@pop.com" },
+                                                            new Performer { PerformerId = 8, FirstName = "first name 8", MiddleName = "middle name 8", LastName = "last name 8 ", YearsOld = 40, Email = "second@pop.com" },
+                                                            new Performer { PerformerId = 9, FirstName = "first name 9", MiddleName = "middle name 9", LastName = "last name 9 ", YearsOld = 45, Email = "third@pop.com" }
                                                           };
             listMusicalGenre.Add(musicalGenre);
 

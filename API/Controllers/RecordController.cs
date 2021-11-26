@@ -8,16 +8,17 @@ namespace API.Controllers
     [Route("api/records")]
     public class RecordController : ControllerBase
     {
-        private readonly IRecordApplicationService _recordApplicationService;
-        public RecordController(IRecordApplicationService recordApplicationService)
+        private readonly IMusicalGenreApplicationService _musicalGenreApplicationService;
+        public RecordController(IMusicalGenreApplicationService musicalGenreApplicationService)
         {
-            _recordApplicationService = recordApplicationService;
+            _musicalGenreApplicationService = musicalGenreApplicationService;
         }
 
         [HttpPost]
-        public string GetAllMusicalGenre(Filter filter)
+        [Route("musical")]
+        public string PostMusicalGenre(FilterApplication filterApplication)
         {
-            var response = _recordApplicationService.FilterGenre(filter);
+            var response = _musicalGenreApplicationService.FilterGenre(filterApplication);
             return JsonConvert.SerializeObject(response);
         }
             
