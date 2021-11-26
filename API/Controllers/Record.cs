@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using Application;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -11,5 +13,13 @@ namespace API.Controllers
         {
             _recordApplicationService = recordApplicationService;
         }
+
+        [HttpPost]
+        public string GetAllMusicalGenre(Filter filter)
+        {
+            var response = _recordApplicationService.FilterGenre(filter);
+            return JsonConvert.SerializeObject(response);
+        }
+            
     }
 }
