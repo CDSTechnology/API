@@ -6,10 +6,10 @@ using Newtonsoft.Json;
 namespace API.Controllers
 {
     [Route("api/records")]
-    public class Record : ControllerBase
+    public class RecordController : ControllerBase
     {
         private readonly IRecordApplicationService _recordApplicationService;
-        public Record(IRecordApplicationService recordApplicationService)
+        public RecordController(IRecordApplicationService recordApplicationService)
         {
             _recordApplicationService = recordApplicationService;
         }
